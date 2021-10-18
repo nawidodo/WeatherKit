@@ -6,8 +6,7 @@
 //
 
 import Combine
-import CoreLocation
-import SwiftUI
+import Foundation
 
 class WeatherService {
     
