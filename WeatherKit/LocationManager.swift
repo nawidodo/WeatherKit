@@ -13,7 +13,7 @@ import Combine
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
-    static var shared = LocationManager()
+    static let shared = LocationManager()
     
     private let locationManager = CLLocationManager()
     @Published var locationStatus: CLAuthorizationStatus?
