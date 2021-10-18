@@ -60,18 +60,17 @@ struct ContentView: View {
                 locationManager
                     .$lastLocation
                     .receive(on: DispatchQueue.main)
+                    .compactMap{ $0 }
                     .sink { loc in
-                        if let lat = loc?.coordinate.latitude, let lon = loc?.coordinate.longitude {
-                            WeatherService
-                                .shared
-                                .getWeather(lat: lat, lon: lon)
-                                .subscribe(on: DispatchQueue.main)
-                                .sink { _ in
-                                } receiveValue: { weather_ in
-                                    self.weather = weather_
-                                }
-                                .store(in: &storage)
-                        }
+                        WeatherService
+                            .shared
+                            .getWeather(lat: loc.coordinate.latitude, lon: loc.coordinate.longitude)
+                            .subscribe(on: DispatchQueue.main)
+                            .sink { _ in
+                            } receiveValue: { weather_ in
+                                self.weather = weather_
+                            }
+                            .store(in: &storage)
                     }.store(in: &storage)
             }
         }
