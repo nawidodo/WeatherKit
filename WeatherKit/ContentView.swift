@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     @State var isPresentedImageGallery = false
     @State var selectedIndex = 0
     @State var image: UIImage? = UserDefaults.group.loadImage(name: widgetBG)
     @StateObject var locationManager = LocationManager.shared
-    @State var weather: String? = randomWeather()
+    @State var weather: String?
+    @State var storage: Set<AnyCancellable> = []
         
     var body: some View {
         NavigationView {
@@ -54,6 +56,24 @@ struct ContentView: View {
             .sheet(isPresented: $isPresentedImageGallery, content: {
                 ImagePicker(sourceType: .photoLibrary, selectedImage: self.$image)
             })
+            .onAppear {
+                locationManager
+                    .$lastLocation
+                    .receive(on: DispatchQueue.main)
+                    .sink { loc in
+                        if let lat = loc?.coordinate.latitude, let lon = loc?.coordinate.longitude {
+                            WeatherService
+                                .shared
+                                .getWeather(lat: lat, lon: lon)
+                                .subscribe(on: DispatchQueue.main)
+                                .sink { _ in
+                                } receiveValue: { weather_ in
+                                    self.weather = weather_
+                                }
+                                .store(in: &storage)
+                        }
+                    }.store(in: &storage)
+            }
         }
     }
 }

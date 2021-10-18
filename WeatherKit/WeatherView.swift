@@ -30,18 +30,21 @@ struct WeatherView: View {
                 VStack {
                     Image(weather ?? "sunny")
                         .resizable()
-                        .frame(width: 67, height: 67)
-                    Text(currentLocation ?? "Tokyo, Japan")
-                        .font(Font.system(.headline, design: .rounded))
-                        .fontWeight(.bold)
-                        .foregroundColor(image == nil ? Color(rgb: 0x333333) : Color.white)
-                        .padding([.leading, .trailing], 16)
-                        .onChange(of: currentLocation) { loc in
-                            UserDefaults.group.setValue(loc, forKey: widgetLocation)
-                            UserDefaults.group.setValue(weather, forKey: widgetWeather)
+                        .frame(width: geo.size.height/2, height: geo.size.height/2)
+                        .onChange(of: weather) { w in
+                            UserDefaults.group.setValue(w, forKey: widgetWeather)
                             WidgetCenter.shared.reloadAllTimelines()
                         }
-                    
+                    Spacer()
+                    Text(currentLocation ?? "Tokyo, Japan")
+                        .font(Font.system(size: geo.size.height/9, weight: .bold, design: .rounded))
+                        .foregroundColor(image == nil ? Color(rgb: 0x333333) : Color.white)
+                        .padding([.leading, .trailing, .bottom], 16)
+                        .onChange(of: currentLocation) { loc in
+                            UserDefaults.group.setValue(loc, forKey: widgetLocation)
+                            WidgetCenter.shared.reloadAllTimelines()
+                        }
+                        .lineLimit(3)
                 }
             }
             .background(Color.white)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD09DC30271C6EA7004B8485 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD92ED1B271C365700D4263B /* LocationManager.swift */; };
+		CD09DC32271C7876004B8485 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD09DC31271C7876004B8485 /* WeatherService.swift */; };
 		CD0A3989271320E3007743C8 /* WeatherKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A3988271320E3007743C8 /* WeatherKitApp.swift */; };
 		CD0A398B271320E3007743C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A398A271320E3007743C8 /* ContentView.swift */; };
 		CD0A398D271320E3007743C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0A398C271320E3007743C8 /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 		CD92ED19271C28DD00D4263B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0A39972715BA2E007743C8 /* Extensions.swift */; };
 		CD92ED1A271C290600D4263B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD0A398C271320E3007743C8 /* Assets.xcassets */; };
 		CD92ED1C271C365700D4263B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD92ED1B271C365700D4263B /* LocationManager.swift */; };
+		CDE08A7C271D72FC00D8722A /* WeatherResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE08A7B271D72FC00D8722A /* WeatherResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CD09DC31271C7876004B8485 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		CD0A3985271320E3007743C8 /* WeatherKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD0A3988271320E3007743C8 /* WeatherKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherKitApp.swift; sourceTree = "<group>"; };
 		CD0A398A271320E3007743C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		CD92ED1B271C365700D4263B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		CD92ED21271C4E3D00D4263B /* WeatherKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeatherKit.entitlements; sourceTree = "<group>"; };
 		CD92ED22271C4F5D00D4263B /* WeatherWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeatherWidgetExtension.entitlements; sourceTree = "<group>"; };
+		CDE08A7B271D72FC00D8722A /* WeatherResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,8 @@
 				CD0A399927168053007743C8 /* WeatherView.swift */,
 				CD0A399B27168E89007743C8 /* ImagePicker.swift */,
 				CD92ED1B271C365700D4263B /* LocationManager.swift */,
+				CD09DC31271C7876004B8485 /* WeatherService.swift */,
+				CDE08A7B271D72FC00D8722A /* WeatherResponse.swift */,
 			);
 			path = WeatherKit;
 			sourceTree = "<group>";
@@ -262,6 +268,8 @@
 				CD0A3989271320E3007743C8 /* WeatherKitApp.swift in Sources */,
 				CD0A399A27168053007743C8 /* WeatherView.swift in Sources */,
 				CD92ED1C271C365700D4263B /* LocationManager.swift in Sources */,
+				CD09DC32271C7876004B8485 /* WeatherService.swift in Sources */,
+				CDE08A7C271D72FC00D8722A /* WeatherResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
