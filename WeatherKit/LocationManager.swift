@@ -39,7 +39,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         getPlace(for: location) { [unowned self] mark in
             var current = ""
             guard let mark = mark else {return}
-            if let city = mark.subAdministrativeArea {
+            if let city = mark.locality {
                 current.append("\(city), ")
             }
             if let province = mark.administrativeArea {
