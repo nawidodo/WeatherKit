@@ -56,8 +56,8 @@ struct WeatherWidget: Widget {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             WeatherWidgetEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Weather Widget")
+        .description("This is an weather widget.")
     }
 }
 
